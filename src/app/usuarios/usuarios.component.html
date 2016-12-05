@@ -1,0 +1,23 @@
+ <div class="panel panel-default">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Nombre</td>
+                    <td>Nombre de usuario</td>
+                    <td>Correo</td>
+                    <td>Telefono</td>
+                    <td>Cuidad</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let usuario of user">
+                    <td>{{usuario.name | nombreusuario}}</td>
+                    <td>{{usuario.username}}</td>
+                    <td>{{usuario.email | lowercase}}</td>
+                    <td>{{usuario.phone}}</td>
+                    <td>{{usuario.address.city}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+<div class="panel-heading detalle">Ingresar datos usuario</div>
+  <div class="panel-body">
+        <form [formGroup]="form" (submit)="PostUser()">
+            <div class = "form-group">
+                <label for="nombre">Nombre Completo</label>
+                <input formControlName="nombre" id="nombre">
+                <control-messages [control]="form.controls.nombre"></control-messages>
+            </div>
+            <div class = "form-group">
+                <label for="nombreUser">Nombre de usuario</label>
+                <input formControlName="nombreUser" id="nombreUser" >
+                <control-messages [control]="form.controls.nombreUser"></control-messages>
+            </div>
+            <div class = "form-group">
+                <label for="email">Correo electronico</label>
+                <input formControlName="email" id="email">
+                <control-messages [control]="form.controls.email"></control-messages>
+            </div>
+            <div class = "form-group">
+                <label for="telefono">Telefono</label>
+                <input formControlName="telefono"id="telefono">
+                <control-messages [control]="form.controls.telefono"></control-messages>
+            </div>
+            <button class="btn btn-success"  type="submit" [disabled]="!form.valid">Submit</button>
+        </form>
+        <p>Value: {{ form.value | json }}</p>
+        <p>Validation status: {{ form.status }}</p>
+  </div>
+</div>
